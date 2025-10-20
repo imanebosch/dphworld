@@ -194,23 +194,6 @@ After deployment, you can verify the setup:
 
 ## Data Flow & Job Execution
 
-### Data Flow Overview
-
-
-```mermaid
-graph TD
-    A[SpaceX API] --> B[Data Ingestion Container]
-    B --> C[S3 Raw Layer<br/>dpstack-dlake/raw/]
-    C --> D[dbt Transformation Container]
-    D --> E[Redshift Data Warehouse]
-    F[Airflow MWAA] --> B
-    F --> D
-    G[ECR Registry] --> B
-    G --> D
-    H[AWS Batch] --> B
-    H --> D
-```
-
 **Data Layers:**
 1. **Raw Layer** (`s3://dpstack-dlake/raw/`): Unprocessed data from external sources
 2. **Processed Layer** (`s3://dpstack-dlake/stage/`): Structured data
