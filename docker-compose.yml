@@ -12,6 +12,11 @@ services:
         target: /home/appuser/app
     networks:
       - default-net
+    command: >
+      sh -c "
+      cdk bootstrap aws://${AWS_ACCOUNT_ID}/${AWS_DEFAULT_REGION} &&
+      cdk deploy DataPlatform --app 'python3 app.py' --require-approval never
+      "
 
   ingestion:
     build:

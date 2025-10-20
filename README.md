@@ -124,7 +124,7 @@ AIRFLOW_UID=1000
 
 #### Step 1: Deploy AWS Infrastructure
 ```bash
-docker-compose run infra cdk deploy DataPlatform --app "app.py"
+docker-compose run infra"
 ```
 
 ### 2. Upload Files to S3

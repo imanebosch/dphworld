@@ -2,12 +2,12 @@ from aws_cdk import Stack
 from components.networking import Networking
 from config import Config
 from constructs import Construct
-from infra.components.compute import BatchCompute
-from infra.components.compute_jobs import ComputeJob
-from infra.components.wharehouse import Warehouse
-from infra.components.ecr import EcrRepository
-from infra.components.storage import Storage
-from infra.components.mwaa import Mwaa
+from components.compute import BatchCompute
+from components.compute_jobs import ComputeJob
+from components.wharehouse import Warehouse
+from components.ecr import EcrRepository
+from components.storage import Storage
+from components.mwaa import Mwaa
 
 
 class DataPlatform(Stack):
