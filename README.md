@@ -107,8 +107,12 @@ AWS_ACCESS_KEY_ID=your-access-key
 AWS_SECRET_ACCESS_KEY=your-secret-key
 AWS_DEFAULT_REGION=eu-west-1
 
+
 # Settings Module (optional, defaults to 'dev')
 SETTINGS_MODULE=dev
+
+# Dbt
+DBT_PROFILES_DIR=./
 
 #: Development only
 AIRFLOW_IMAGE_NAME=apache/airflow:3.1.0
