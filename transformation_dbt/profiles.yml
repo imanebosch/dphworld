@@ -1,0 +1,21 @@
+transformation_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: redshift
+      method: iam
+      workgroup_name: dpstack-workgroup
+      host: dpstack-workgroup.665952734533.eu-west-1.redshift-serverless.amazonaws.com
+      user: dpstack
+      region: eu-west-1
+      dbname: dpstack
+      schema: public
+      port: 5439
+
+      # Optional Redshift configs:
+      threads: 4
+      retries: 1 
+      autocommit: true  
+      autocreate: true  
+      sslmode: require
+      connect_timeout: 30

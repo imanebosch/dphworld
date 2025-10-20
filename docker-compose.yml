@@ -1,0 +1,48 @@
+services:
+  infra:
+    build:
+      context: ./infra
+      target: infra-app
+    image: infra-app
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ./infra
+        target: /home/appuser/app
+    networks:
+      - default-net
+
+  ingestion:
+    build:
+      context: ./ingestion
+      target: ingestion-app
+    image: ingestion-app
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ./ingestion
+        target: /home/appuser/app
+    networks:
+      - default-net
+
+  dbt:
+    build:
+      context: ./transformation_dbt
+      target: dbt-app
+    image: dbt-app
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: ./transformation_dbt
+        target: /home/appuser/app
+    networks:
+      - default-net
+
+volumes:
+  default-volume:
+
+networks:
+  default-net:

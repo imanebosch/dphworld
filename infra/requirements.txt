@@ -1,0 +1,2 @@
+aws-cdk-lib==2.161.1
+pydantic==2.12.0

@@ -1,0 +1,53 @@
+version: 2
+
+sources:
+  - name: spacex
+    description: "SpaceX data from S3"
+    schema: src_spacex
+    tables:
+      - name: launches
+        description: "Launches data staged in S3"
+        external:
+          location: 's3://dpstack-dlake/stage/spacex/launches/'
+          file_format: 'csv'
+          table_properties: > 
+            ('skip.header.line.count'='1')
+        columns:
+          - name: id
+            data_type: varchar
+          - name: name
+            data_type: varchar
+          - name: date_local
+            data_type: varchar
+          - name: rocket
+            data_type: varchar
+          - name: success
+            data_type: varchar
+          - name: date_utc
+            data_type: varchar
+      - name: cores
+        description: "Cores data staged in S3"
+        external:
+          location: 's3://dpstack-dlake/stage/spacex/cores/'
+          file_format: 'csv'
+          table_properties: > 
+            ('skip.header.line.count'='1')
+        columns:
+          - name: id
+            data_type: varchar
+          - name: block
+            data_type: varchar
+          - name: reuse_count
+            data_type: varchar
+          - name: rtls_attempts
+            data_type: varchar
+          - name: rtls_landings
+            data_type: varchar
+          - name: asds_attempts
+            data_type: varchar
+          - name: asds_landings
+            data_type: varchar
+          - name: last_update
+            data_type: varchar
+          - name: status
+            data_type: varchar

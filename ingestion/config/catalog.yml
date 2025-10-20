@@ -1,0 +1,11 @@
+raw_spacex:
+  path: s3://dpstack-dlake/raw/
+  format: json
+
+launches_stage:
+  path: s3://dpstack-dlake/stage/spacex/launches/
+  format: parquet
+
+cores_stage:
+  path: s3://dpstack-dlake/stage/spacex/cores/
+  format: parquet
