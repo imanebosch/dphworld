@@ -28,7 +28,7 @@ copy_job = BatchOperator(
     job_definition="ingestion-job",
     job_queue="dpstack-batch-queue",
     region_name="eu-west-1",
-    container_overrides={"command": ["python", "spacex/copy.py"]},
+    container_overrides={"command": ["python", "spacex/ingest.py"]},
     dag=dag,
 )
 
