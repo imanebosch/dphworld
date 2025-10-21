@@ -2,3 +2,4 @@ boto3==1.40.52
 pandas==2.3.3
 s3fs==0.4.2
 PyYAML==6.0.3
+awswrangler==3.13.0
