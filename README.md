@@ -1,6 +1,6 @@
 # dpworld
 
-Small data platform architecture for AWS for practice
+A simple AWS-based data platform architecture designed for learning and practice.
 
 ## Table of Contents
 
@@ -124,7 +124,7 @@ AIRFLOW_UID=1000
 
 #### Step 1: Deploy AWS Infrastructure
 ```bash
-docker-compose run infra"
+docker-compose run infra
 ```
 
 ### 2. Upload Files to S3
